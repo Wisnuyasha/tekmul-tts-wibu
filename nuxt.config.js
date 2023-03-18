@@ -15,7 +15,7 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
-  
+
   async asyncData({ store }) {
     await store.dispatch('initImagePath')
   },
