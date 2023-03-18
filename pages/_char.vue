@@ -60,75 +60,79 @@ export default {
       },
       "saki": {
         "name": "Tenma Saki",
-        "image": "https://static.miraheze.org/projectsekaiwiki/b/b3/Ichika.png",
+        "image": "https://static.miraheze.org/projectsekaiwiki/d/d0/Saki.png",
       },
       "hona": {
         "name": "Mochizuki Hona",
-        "image": "https://static.miraheze.org/projectsekaiwiki/b/b3/Ichika.png",
+        "image": "https://static.miraheze.org/projectsekaiwiki/4/40/Honami.png",
       },
       "shiho": {
         "name": "Hinomori Shiho",
-        "image": "https://static.miraheze.org/projectsekaiwiki/b/b3/Ichika.png",
+        "image": "https://static.miraheze.org/projectsekaiwiki/8/87/Shiho.png",
       },
       "minori": {
         "name": "Hanasato Minori",
-        "image": "https://static.miraheze.org/projectsekaiwiki/b/b3/Ichika.png",
+        "image": "https://static.miraheze.org/projectsekaiwiki/1/1a/Minori.png",
+      },
+      "haruka": {
+        "name": "Kiritani Haruka",
+        "image": "https://static.miraheze.org/projectsekaiwiki/b/b1/Haruka.png",
       },
       "airi": {
-        "name": "Kiritani Haruka",
-        "image": "https://static.miraheze.org/projectsekaiwiki/b/b3/Ichika.png",
+        "name": "Momoi Airi",
+        "image": "https://static.miraheze.org/projectsekaiwiki/9/96/Airi.png",
       },
       "shizu": {
-        "name": "Momoi Airi",
-        "image": "https://static.miraheze.org/projectsekaiwiki/b/b3/Ichika.png",
+        "name": "Hinomori Shizu",
+        "image": "https://static.miraheze.org/projectsekaiwiki/a/ac/Shizuku.png",
       },
       "kohane": {
         "name": "Azusawa Kohane",
-        "image": "https://static.miraheze.org/projectsekaiwiki/b/b3/Ichika.png",
+        "image": "https://static.miraheze.org/projectsekaiwiki/b/b4/Kohane.png",
       },
       "an": {
         "name": "Shiraishi An",
-        "image": "https://static.miraheze.org/projectsekaiwiki/b/b3/Ichika.png",
+        "image": "https://static.miraheze.org/projectsekaiwiki/8/8a/An.png",
       },
       "akito": {
         "name": "Shinonome Akito",
-        "image": "https://static.miraheze.org/projectsekaiwiki/b/b3/Ichika.png",
+        "image": "https://static.miraheze.org/projectsekaiwiki/b/b3/Akito.png",
       },
       "toya": {
         "name": "Aoyagi Toya",
-        "image": "https://static.miraheze.org/projectsekaiwiki/b/b3/Ichika.png",
+        "image": "https://static.miraheze.org/projectsekaiwiki/e/e9/Toya.png",
       },
       "tsukasa": {
         "name": "Tenma Tsukasa",
-        "image": "https://static.miraheze.org/projectsekaiwiki/b/b3/Ichika.png",
+        "image": "https://static.miraheze.org/projectsekaiwiki/c/cc/Tsukasa.png",
       },
       "emu": {
         "name": "Ootori Emu",
-        "image": "https://static.miraheze.org/projectsekaiwiki/b/b3/Ichika.png",
+        "image": "https://static.miraheze.org/projectsekaiwiki/5/5d/Emu.png",
       },
       "nene": {
         "name": "Kusanagi Nene",
-        "image": "https://static.miraheze.org/projectsekaiwiki/b/b3/Ichika.png",
+        "image": "https://static.miraheze.org/projectsekaiwiki/5/57/Nene.png",
       },
       "rui": {
         "name": "Kamishiro Rui",
-        "image": "https://static.miraheze.org/projectsekaiwiki/b/b3/Ichika.png",
+        "image": "https://static.miraheze.org/projectsekaiwiki/1/1e/Rui.png",
       },
       "kanade": {
         "name": "Yoisaki Kanade",
-        "image": "https://static.miraheze.org/projectsekaiwiki/b/b3/Ichika.png",
+        "image": "https://static.miraheze.org/projectsekaiwiki/2/2e/Kanade.png",
       },
       "mafuyu": {
         "name": "Asahina Mafuyu",
-        "image": "https://static.miraheze.org/projectsekaiwiki/b/b3/Ichika.png",
+        "image": "https://static.miraheze.org/projectsekaiwiki/1/16/Mafuyu.png",
       },
       "ena": {
         "name": "Shinonome Ena",
-        "image": "https://static.miraheze.org/projectsekaiwiki/b/b3/Ichika.png",
+        "image": "https://static.miraheze.org/projectsekaiwiki/c/c8/Ena.png",
       },
       "mizuki": {
         "name": "Akiyama Mizuki",
-        "image": "https://static.miraheze.org/projectsekaiwiki/b/b3/Ichika.png",
+        "image": "https://static.miraheze.org/projectsekaiwiki/9/9c/Mizuki.png",
       },
     }
     return {
