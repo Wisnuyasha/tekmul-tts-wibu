@@ -93,30 +93,6 @@
 <script>
 export default {
   name: 'IndexPage',
-  data() {
-    return {
-      char1:  'hoshino ichika',
-      char2:  'tenma saki',
-      char3:  'mochizuki hona',
-      char4:  'hinomori shiho',
-      char5:  'hanasato minori',
-      char6:  'kiritani haruka',
-      char7:  'momoi airi',
-      char8:  'hinomori shizu',
-      char9:  'azusawa kohane',
-      char10: 'shiraishi an',
-      char11: 'shinonome akito',
-      char12: 'aoyagi toya',
-      char13: 'tenma tsukasa',
-      char14: 'ootori emu',
-      char15: 'kusanagi nene',
-      char16: 'kamishiro rui',
-      char17: 'yoisaki kanade',
-      char18: 'asahina mafuyu',
-      char19: 'shinonome ena',
-      char20: 'akiyama mizuki',
-    }
-  },
   methods: {
     navigate(char) {
       this.$router.push(`/${char}`)
