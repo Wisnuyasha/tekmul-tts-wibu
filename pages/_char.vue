@@ -11,17 +11,18 @@
                 <div class="px-3 py-2 border-2 rounded-lg">
                     <label class="block w-full">
                         <span class="text-gray-500 text-sm">Text (500 words limitation)</span>
-                        <textarea data-testid="textbox" class="scroll-hide w-full rounded-lg border-2" placeholder="" rows="7" style="overflow-y: scroll; height: 168px;"></textarea>
+                        <textarea v-model="text" data-testid="textbox" class="scroll-hide w-full rounded-lg border-2 p-2" placeholder="" rows="7" style="overflow-y: scroll; height: 168px;"></textarea>
                     </label>
                 </div>
                 <div class="relative w-full border-2 mt-2 px-3 py-2 rounded-lg">
                     <label for="default-range" class="block mb-2 text-sm">
                         <span class="text-gray-500 text-sm">Speed</span>
+                        <span class="text-gray-500 text-sm absolute right-3">{{speed}}</span>
                     </label>
-                    <input id="default-range" type="range" min="0.1" max="2" value="1" step="0.1" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer">
+                    <input id="default-range" type="range" min="0.1" max="2.0" v-model="speed" step="0.1" class="w-full h-2 bg-sky-500 rounded-lg appearance-none cursor-pointer">
                 </div>
                 <div class="w-full mt-2 rounded-lg p-2 text-center font-bold bg-sky-400/[0.7] cursor-pointer hover:bg-sky-400">
-                    <h1 class="text-sky-900">Generate</h1>
+                    <h1 @click="generateAudio" class="text-sky-900">Generate</h1>
                 </div>
             </div>
             <div class="p-2 rounded-lg border-2 mt-5 backdrop-blur-md bg-slate-200/[.06] shadow">
@@ -40,8 +41,8 @@
                     </div>
                     <div class="h-full min-h-[8rem] flex justify-center items-center">
                         <div class="h-5 opacity-50">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-music"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
-                            <!-- <audio class="w-full" controls="" preload="metadata" src="https://kdrkdrkdr-prosekatts.hf.space/file=/tmp/tmp6lzavsd1/tmpx3h60799.wav"></audio> -->
+                            <svg v-if="audio == null" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-music"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+                            <audio v-if="audio != null" class="w-full" controls="" preload="metadata" :src="audio"></audio>
                         </div>
                     </div>
                 </div>
@@ -54,83 +55,83 @@
 export default {
   setup() {
     const characterList = {
-      "ichika": {
+      "hoshino_ichika": {
         "name": "Hoshino Ichika",
         "image": "https://static.miraheze.org/projectsekaiwiki/b/b3/Ichika.png",
       },
-      "saki": {
+      "tenma_saki": {
         "name": "Tenma Saki",
         "image": "https://static.miraheze.org/projectsekaiwiki/d/d0/Saki.png",
       },
-      "hona": {
+      "mochizuki_honami": {
         "name": "Mochizuki Hona",
         "image": "https://static.miraheze.org/projectsekaiwiki/4/40/Honami.png",
       },
-      "shiho": {
+      "hinomori_shiho": {
         "name": "Hinomori Shiho",
         "image": "https://static.miraheze.org/projectsekaiwiki/8/87/Shiho.png",
       },
-      "minori": {
+      "hanasato_minori": {
         "name": "Hanasato Minori",
         "image": "https://static.miraheze.org/projectsekaiwiki/1/1a/Minori.png",
       },
-      "haruka": {
+      "kiritani_haruka": {
         "name": "Kiritani Haruka",
         "image": "https://static.miraheze.org/projectsekaiwiki/b/b1/Haruka.png",
       },
-      "airi": {
+      "momoi_airi": {
         "name": "Momoi Airi",
         "image": "https://static.miraheze.org/projectsekaiwiki/9/96/Airi.png",
       },
-      "shizu": {
+      "hinomori_shizuku": {
         "name": "Hinomori Shizu",
         "image": "https://static.miraheze.org/projectsekaiwiki/a/ac/Shizuku.png",
       },
-      "kohane": {
+      "azusawa_kohane": {
         "name": "Azusawa Kohane",
         "image": "https://static.miraheze.org/projectsekaiwiki/b/b4/Kohane.png",
       },
-      "an": {
+      "shiraishi_an": {
         "name": "Shiraishi An",
         "image": "https://static.miraheze.org/projectsekaiwiki/8/8a/An.png",
       },
-      "akito": {
+      "shinonome_akito": {
         "name": "Shinonome Akito",
         "image": "https://static.miraheze.org/projectsekaiwiki/b/b3/Akito.png",
       },
-      "toya": {
+      "aoyagi_toya": {
         "name": "Aoyagi Toya",
         "image": "https://static.miraheze.org/projectsekaiwiki/e/e9/Toya.png",
       },
-      "tsukasa": {
+      "tenma_tsukasa": {
         "name": "Tenma Tsukasa",
         "image": "https://static.miraheze.org/projectsekaiwiki/c/cc/Tsukasa.png",
       },
-      "emu": {
+      "ootori_emu": {
         "name": "Ootori Emu",
         "image": "https://static.miraheze.org/projectsekaiwiki/5/5d/Emu.png",
       },
-      "nene": {
+      "kusanagi_nene": {
         "name": "Kusanagi Nene",
         "image": "https://static.miraheze.org/projectsekaiwiki/5/57/Nene.png",
       },
-      "rui": {
+      "kamishiro_rui": {
         "name": "Kamishiro Rui",
         "image": "https://static.miraheze.org/projectsekaiwiki/1/1e/Rui.png",
       },
-      "kanade": {
+      "yoisaki_kanade": {
         "name": "Yoisaki Kanade",
         "image": "https://static.miraheze.org/projectsekaiwiki/2/2e/Kanade.png",
       },
-      "mafuyu": {
+      "asahina_mafuyu": {
         "name": "Asahina Mafuyu",
         "image": "https://static.miraheze.org/projectsekaiwiki/1/16/Mafuyu.png",
       },
-      "ena": {
+      "shinonome_ena": {
         "name": "Shinonome Ena",
         "image": "https://static.miraheze.org/projectsekaiwiki/c/c8/Ena.png",
       },
-      "mizuki": {
+      "akiyama_mizuki": {
         "name": "Akiyama Mizuki",
         "image": "https://static.miraheze.org/projectsekaiwiki/9/9c/Mizuki.png",
       },
@@ -138,6 +139,58 @@ export default {
     return {
       characterList,
     };
+  },
+  data() {
+    return {
+      text: "",
+      speaker: "hoshino_ichika",
+      speed: 1.0,
+      audio: null,
+    };
+  },
+  methods: {
+    generateAudio() {
+      // Connect to websocket
+      let socket = new WebSocket("wss://kdrkdrkdr-prosekatts.hf.space/queue/join");
+      let sendText = this.text;
+      let sendSpeaker = this.speaker;
+      let sendSpeed = this.speed;
+      let audioReceive = null;
+      let that = this;
+      // Connection opened
+      socket.addEventListener('open', function (event) {
+          socket.send(JSON.stringify({"session_hash":"o32vbsauejd","fn_index":0}));
+      });
+      // Listen for messages
+      socket.addEventListener('message', async function (event) {
+          console.log('Message from server ', event.data);
+          // Parse message
+          let data = JSON.parse(event.data);
+          if(data.msg == "send_data") {
+              socket.send(JSON.stringify({
+                  "fn_index":0,
+                  "data":[
+                      sendText,
+                      sendSpeaker,
+                      sendSpeed,
+                      false
+                  ],
+                  "session_hash":"o32vbsauejd"}
+              ));
+          }
+          if(data.msg == "process_completed") {
+            that.audio = "https://kdrkdrkdr-prosekatts.hf.space/file=" + data.output.data[1].name;
+          }
+      });
+      // Listen for errors
+      socket.addEventListener('error', function (event) {
+          console.log('Error from server ', event.data);
+      });
+      // Listen for close
+      socket.addEventListener('close', function (event) {
+          console.log('Close from server ', event.data);
+      });
+    },
   },
 };
 </script>
