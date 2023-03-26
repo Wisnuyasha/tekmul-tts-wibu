@@ -6,16 +6,16 @@
               <div class="flex justify-center gap-6 w-[40%] mt-2 mx-auto">
                   <img src="https://static.miraheze.org/projectsekaiwiki/thumb/1/17/Charsel-ichika.png/193px-Charsel-ichika.png"
                   class="mx-auto w-40  hover:scale-110 duration-200 ease-in cursor-pointer" alt=""
-                  @click="navigate('ichika')">
+                  @click="navigate('hoshino_ichika')">
                   <img src="https://static.miraheze.org/projectsekaiwiki/thumb/9/9e/Charsel-saki.png/193px-Charsel-saki.png"
                   class="mx-auto w-40  hover:scale-110 duration-200 ease-in cursor-pointer" alt=""
-                  @click="navigate('saki')">
+                  @click="navigate('tenma_saki')">
                   <img src="https://static.miraheze.org/projectsekaiwiki/thumb/1/19/Charsel-honami.png/193px-Charsel-honami.png"
                   class="mx-auto w-40  hover:scale-110 duration-200 ease-in cursor-pointer" alt=""
-                  @click="navigate('hona')">
+                  @click="navigate('mochizuki_honami')">
                   <img src="https://static.miraheze.org/projectsekaiwiki/thumb/7/79/Charsel-shiho.png/193px-Charsel-shiho.png"
                   class="mx-auto w-40  hover:scale-110 duration-200 ease-in cursor-pointer" alt=""
-                  @click="navigate('shiho')">
+                  @click="navigate('hinomori_shiho')">
               </div>
           </div>
           <div class="m-6 min-h-fit w-fit px-16 py-10 backdrop-blur-md bg-white/[.01] shadow-lg rounded-xl">
@@ -23,16 +23,16 @@
               <div class="flex justify-center gap-6 w-[40%] mt-2 mx-auto">
                   <img src="https://static.miraheze.org/projectsekaiwiki/thumb/a/a0/Charsel-minori.png/193px-Charsel-minori.png"
                   class="mx-auto w-40  hover:scale-110 duration-200 ease-in cursor-pointer" alt=""
-                  @click="navigate('minori')">
+                  @click="navigate('hanasato_minori')">
                   <img src="https://static.miraheze.org/projectsekaiwiki/thumb/2/20/Charsel-haruka.png/193px-Charsel-haruka.png"
                   class="mx-auto w-40  hover:scale-110 duration-200 ease-in cursor-pointer" alt=""
-                  @click="navigate('haruka')">
+                  @click="navigate('kiritani_haruka')">
                   <img src="https://static.miraheze.org/projectsekaiwiki/thumb/0/00/Charsel-airi.png/193px-Charsel-airi.png"
                   class="mx-auto w-40  hover:scale-110 duration-200 ease-in cursor-pointer" alt=""
-                  @click="navigate('airi')">
+                  @click="navigate('momoi_airi')">
                   <img src="https://static.miraheze.org/projectsekaiwiki/thumb/e/eb/Charsel-shizuku.png/193px-Charsel-shizuku.png"
                   class="mx-auto w-40  hover:scale-110 duration-200 ease-in cursor-pointer" alt=""
-                  @click="navigate('shizu')">
+                  @click="navigate('hinomori_shizuku')">
               </div>
           </div>
           <div class="m-6 min-h-fit w-fit px-16 py-10 backdrop-blur-md bg-white/[.01] shadow-lg rounded-xl">
@@ -40,16 +40,16 @@
               <div class="flex justify-center gap-6 w-[40%] mt-2 mx-auto">
                   <img src="https://static.miraheze.org/projectsekaiwiki/thumb/c/c2/Charsel-kohane.png/193px-Charsel-kohane.png"
                   class="mx-auto w-40  hover:scale-110 duration-200 ease-in cursor-pointer" alt=""
-                  @click="navigate('kohane')">
+                  @click="navigate('azusawa_kohane')">
                   <img src="https://static.miraheze.org/projectsekaiwiki/thumb/2/2c/Charsel-an.png/193px-Charsel-an.png"
                   class="mx-auto w-40  hover:scale-110 duration-200 ease-in cursor-pointer" alt=""
-                  @click="navigate('an')">
+                  @click="navigate('shiraishi_an')">
                   <img src="https://static.miraheze.org/projectsekaiwiki/thumb/a/a1/Charsel-akito.png/193px-Charsel-akito.png"
                   class="mx-auto w-40  hover:scale-110 duration-200 ease-in cursor-pointer" alt=""
-                  @click="navigate('akito')">
+                  @click="navigate('shinonome_akito')">
                   <img src="https://static.miraheze.org/projectsekaiwiki/thumb/d/da/Charsel-toya.png/193px-Charsel-toya.png"
                   class="mx-auto w-40  hover:scale-110 duration-200 ease-in cursor-pointer" alt=""
-                  @click="navigate('toya')">
+                  @click="navigate('aoyagi_toya')">
               </div>
           </div>
           <div class="m-6 min-h-fit w-fit px-16 py-10 backdrop-blur-md bg-white/[.01] shadow-lg rounded-xl">
@@ -57,16 +57,16 @@
               <div class="flex justify-center gap-6 w-[40%] mt-2 mx-auto">
                   <img src="https://static.miraheze.org/projectsekaiwiki/thumb/5/58/Charsel-tsukasa.png/193px-Charsel-tsukasa.png"
                   class="mx-auto w-40  hover:scale-110 duration-200 ease-in cursor-pointer" alt=""
-                  @click="navigate('tsukasa')">
+                  @click="navigate('tenma_tsukasa')">
                   <img src="https://static.miraheze.org/projectsekaiwiki/thumb/9/9f/Charsel-emu.png/193px-Charsel-emu.png"
                   class="mx-auto w-40  hover:scale-110 duration-200 ease-in cursor-pointer" alt=""
-                  @click="navigate('emu')">
+                  @click="navigate('ootori_emu')">
                   <img src="https://static.miraheze.org/projectsekaiwiki/thumb/a/ae/Charsel-nene.png/193px-Charsel-nene.png"
                   class="mx-auto w-40  hover:scale-110 duration-200 ease-in cursor-pointer" alt=""
-                  @click="navigate('nene')">
+                  @click="navigate('kusanagi_nene')">
                   <img src="https://static.miraheze.org/projectsekaiwiki/thumb/e/e1/Charsel-rui.png/193px-Charsel-rui.png"
                   class="mx-auto w-40  hover:scale-110 duration-200 ease-in cursor-pointer" alt=""
-                  @click="navigate('rui')">
+                  @click="navigate('kamishiro_rui')">
               </div>
           </div>
           <div class="m-6 min-h-fit w-fit px-16 py-10 backdrop-blur-md bg-white/[.01] shadow-lg rounded-xl">
@@ -74,16 +74,16 @@
               <div class="flex justify-center gap-6 w-[40%] mt-2 mx-auto">
                   <img src="https://static.miraheze.org/projectsekaiwiki/thumb/6/6a/Charsel-kanade.png/193px-Charsel-kanade.png"
                   class="mx-auto w-40  hover:scale-110 duration-200 ease-in cursor-pointer" alt=""
-                  @click="navigate('kanade')">
+                  @click="navigate('yoisaki_kanade')">
                   <img src="https://static.miraheze.org/projectsekaiwiki/thumb/e/e2/Charsel-mafuyu.png/193px-Charsel-mafuyu.png"
                   class="mx-auto w-40  hover:scale-110 duration-200 ease-in cursor-pointer" alt=""
-                  @click="navigate('mafuyu')">
+                  @click="navigate('asahina_mafuyu')">
                   <img src="https://static.miraheze.org/projectsekaiwiki/thumb/6/61/Charsel-ena.png/193px-Charsel-ena.png"
                   class="mx-auto w-40  hover:scale-110 duration-200 ease-in cursor-pointer" alt=""
-                  @click="navigate('ena')">
+                  @click="navigate('shinonome_ena')">
                   <img src="https://static.miraheze.org/projectsekaiwiki/thumb/9/93/Charsel-mizuki.png/193px-Charsel-mizuki.png"
                   class="mx-auto w-40  hover:scale-110 duration-200 ease-in cursor-pointer" alt=""
-                  @click="navigate('mizuki')">
+                  @click="navigate('akiyama_mizuki')">
               </div>
           </div>
     </div>
@@ -93,30 +93,6 @@
 <script>
 export default {
   name: 'IndexPage',
-  data() {
-    return {
-      char1:  'hoshino ichika',
-      char2:  'tenma saki',
-      char3:  'mochizuki hona',
-      char4:  'hinomori shiho',
-      char5:  'hanasato minori',
-      char6:  'kiritani haruka',
-      char7:  'momoi airi',
-      char8:  'hinomori shizu',
-      char9:  'azusawa kohane',
-      char10: 'shiraishi an',
-      char11: 'shinonome akito',
-      char12: 'aoyagi toya',
-      char13: 'tenma tsukasa',
-      char14: 'ootori emu',
-      char15: 'kusanagi nene',
-      char16: 'kamishiro rui',
-      char17: 'yoisaki kanade',
-      char18: 'asahina mafuyu',
-      char19: 'shinonome ena',
-      char20: 'akiyama mizuki',
-    }
-  },
   methods: {
     navigate(char) {
       this.$router.push(`/${char}`)
