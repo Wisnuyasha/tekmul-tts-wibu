@@ -147,7 +147,7 @@ export default {
   methods: {
     generateAudio() {
       // Connect to websocket
-      let socket = new WebSocket("wss://kdrkdrkdr-prosekatts.hf.space/queue/join");
+      let socket = new WebSocket("wss://3ba86363-365c-4b42.gradio.live/queue/join");
       let sendText = this.text;
       let sendSpeaker = this.speaker;
       let sendSpeed = this.speed;
@@ -178,7 +178,7 @@ export default {
           }
 
           if(data.msg == "process_completed") {
-            that.audio = "https://kdrkdrkdr-prosekatts.hf.space/file=" + data.output.data[1].name;
+            that.audio = "https://3ba86363-365c-4b42.gradio.live/file=" + data.output.data[1].name;
 
           }
       });
