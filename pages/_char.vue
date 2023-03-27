@@ -153,7 +153,7 @@ export default {
       let socket = new WebSocket("wss://3ba86363-365c-4b42.gradio.live/queue/join");
       let sendText = this.text;
       let sendSpeaker = this.speaker;
-      let sendSpeed = this.speed;
+      let sendSpeed = parseFloat(this.speed);
       let audioReceive = null;
       let that = this;
       // Connection opened
