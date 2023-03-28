@@ -12,7 +12,7 @@
                   <div class="px-3 py-2 border-2 rounded-lg">
                       <label class="block w-full">
                           <span class="text-gray-500 text-sm">Text (500 words limitation)</span>
-                          <textarea v-model="text" data-testid="textbox" class="scroll-hide w-full rounded-lg border-2 p-2" placeholder="" rows="11" style="overflow-y: scroll;"></textarea>
+                          <textarea v-model="text" data-testid="textbox" placeholder="こんにちは" class="scroll-hide w-full rounded-lg border-2 p-2" rows="11" style="overflow-y: scroll;"></textarea>
                       </label>
                   </div>
                   <div class="relative w-full border-2 mt-2 px-3 py-2 rounded-lg">
@@ -36,11 +36,7 @@
                       </div>
                       <div class="h-full min-h-[8rem] flex justify-center items-center">
                         <div v-if="loading" class="h-5 flex items-center">
-                          <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-gray-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 016 12H2c0 3.042 1.135 5.824 3 7.938l.002-.001z"></path>
-                          </svg>
-                          Loading audio file...
+                          <div class="w-12 h-12 rounded-full animate-spin absolute border-8 border-solid border-sky-300 border-t-transparent"></div>
                         </div>
                         <div v-else class="h-5 opacity-50">
                           <svg v-if="audio == null" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-music"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
