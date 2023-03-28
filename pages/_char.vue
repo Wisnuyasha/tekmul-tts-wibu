@@ -12,7 +12,7 @@
                   <div class="px-3 py-2 border-2 rounded-lg">
                       <label class="block w-full">
                           <span class="text-gray-500 text-sm">Text (500 words limitation)</span>
-                          <textarea v-model="text" data-testid="textbox" class="scroll-hide w-full rounded-lg border-2 p-2" placeholder="" rows="7" style="overflow-y: scroll; height: 168px;"></textarea>
+                          <textarea v-model="text" data-testid="textbox" class="scroll-hide w-full rounded-lg border-2 p-2" placeholder="" rows="11" style="overflow-y: scroll;"></textarea>
                       </label>
                   </div>
                   <div class="relative w-full border-2 mt-2 px-3 py-2 rounded-lg">
@@ -35,13 +35,20 @@
                           Output Audio
                       </div>
                       <div class="h-full min-h-[8rem] flex justify-center items-center">
-                          <div class="h-5 opacity-50">
-                              <svg v-if="audio == null" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-music"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
-                              <audio v-if="audio != null" controls>
-                                <source :src="audio" type="audio/wav">
-                                Doesnt support
-                            </audio>
-                            </div>
+                        <div v-if="loading" class="h-5 flex items-center">
+                          <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-gray-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 016 12H2c0 3.042 1.135 5.824 3 7.938l.002-.001z"></path>
+                          </svg>
+                          Loading audio file...
+                        </div>
+                        <div v-else class="h-5 opacity-50">
+                          <svg v-if="audio == null" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-music"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+                          <audio v-else controls>
+                            <source :src="audio" type="audio/wav">
+                            Doesn't support
+                          </audio>
+                        </div>
                       </div>
                   </div>
               </div>
@@ -142,15 +149,16 @@ export default {
   data() {
     return {
       text: "",
-      speaker: "hoshino_ichika",
+      speaker: this.$route.params.char,
       speed: 1.0,
       audio: null,
+      loading: false,
     };
   },
   methods: {
     generateAudio() {
       // Connect to websocket
-      let socket = new WebSocket("wss://3ba86363-365c-4b42.gradio.live/queue/join");
+      let socket = new WebSocket("wss://51fa9ce2-19fa-429e.gradio.live/queue/join");
       let sendText = this.text;
       let sendSpeaker = this.speaker;
       let sendSpeed = parseFloat(this.speed);
@@ -158,6 +166,7 @@ export default {
       let that = this;
       // Connection opened
       socket.addEventListener('open', function (event) {
+          that.loading = true;
           socket.send(JSON.stringify({"session_hash":"o32vbsauejd","fn_index":0}));
       });
       // Listen for messages
@@ -181,7 +190,7 @@ export default {
           }
 
           if(data.msg == "process_completed") {
-            that.audio = "https://3ba86363-365c-4b42.gradio.live/file=" + data.output.data[1].name;
+            that.audio = "https://51fa9ce2-19fa-429e.gradio.live/file=" + data.output.data[1].name;
 
           }
       });
@@ -191,6 +200,7 @@ export default {
       });
       // Listen for close
       socket.addEventListener('close', function (event) {
+          that.loading = false;
           console.log('Close from server ', event.data);
       });
     },
