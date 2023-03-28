@@ -154,7 +154,7 @@ export default {
   methods: {
     generateAudio() {
       // Connect to websocket
-      let socket = new WebSocket("wss://51fa9ce2-19fa-429e.gradio.live/queue/join");
+      let socket = new WebSocket("wss://7a56b45d-8e41-4127.gradio.live/queue/join");
       let sendText = this.text;
       let sendSpeaker = this.speaker;
       let sendSpeed = parseFloat(this.speed);
@@ -186,7 +186,7 @@ export default {
           }
 
           if(data.msg == "process_completed") {
-            that.audio = "https://51fa9ce2-19fa-429e.gradio.live/file=" + data.output.data[1].name;
+            that.audio = "https://7a56b45d-8e41-4127.gradio.live/file=" + data.output.data[1].name;
 
           }
       });
